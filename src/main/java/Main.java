@@ -94,6 +94,8 @@ public class Main {
             findRoutePathService = new FindMinRoutePathService();
             response = findRoutePathService.findPath(from,to);
         }
+
+        findRoutePathService = new FindDirectRoutePath();
         return response;
     }
 }
