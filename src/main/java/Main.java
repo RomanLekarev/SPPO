@@ -9,9 +9,7 @@ import services.RouteServiceImpl;
 import services.abstracts.DetectedWorkloadService;
 import services.abstracts.FindRoutePathService;
 import services.abstracts.RouteService;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     static RouteService routeService = RouteServiceImpl.getInstance();
@@ -80,7 +78,7 @@ public class Main {
 
         /** Вывод остановок одного маршрута **/
         System.out.println(
-                String.format("Поиск по остановке \n\t start : %s \n\r end = %s",from,to)
+                String.format("Поиск по остановке \n\t start : %s \n\t end = %s",from,to)
         );
 
         /** Ищем и выводим номер маршрута до точки **/
