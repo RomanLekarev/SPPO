@@ -14,6 +14,6 @@ import java.util.Set;
 public class RouteFactory {
 
     public Route release(Set<Transport> transport, Integer number) {
-        return new Route(number,new ArrayList<>(),transport);
+        return new Route(number,new ArrayList<>(),new ArrayList<>(),transport);
     }
 }

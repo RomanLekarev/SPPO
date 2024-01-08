@@ -2,21 +2,21 @@ import model.BusTransport;
 import model.MinibusTransport;
 import model.Route;
 import model.Stop;
+import services.DetectedWorkloadServiceImpl;
 import services.FindDirectRoutePath;
 import services.FindMinRoutePathService;
 import services.RouteServiceImpl;
+import services.abstracts.DetectedWorkloadService;
 import services.abstracts.FindRoutePathService;
 import services.abstracts.RouteService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
     static RouteService routeService = RouteServiceImpl.getInstance();
     static FindRoutePathService findRoutePathService = new FindDirectRoutePath();
+    static DetectedWorkloadService detectedWorkloadService = new DetectedWorkloadServiceImpl();
 
     public static void main(String[] args) {
 
@@ -85,6 +85,7 @@ public class Main {
 
         /** Ищем и выводим номер маршрута до точки **/
         System.out.println(findRouteToPoint(from,to));
+        System.out.printf(detectedWorkloadService.execute(routes));
     }
 
     public static String findRouteToPoint(String from,String to){
